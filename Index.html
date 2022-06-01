@@ -67,7 +67,7 @@
 					text-transform: uppercase;
 					} 
 		
-		hr{			border: 0.05vw solid #fff;
+		hr{			border-top: 0.1vw solid #fff;
 					}
 		
 		#title{		display: inline-block;
@@ -108,6 +108,10 @@
 					background: #000;
 					z-index: 1;
 					}
+		
+		#nav a.active {
+    				font-family: 'Frutiger Roman', sans-serif;
+  					}
 		
 		.section{	position: relative;
 					height: 90vh;
@@ -246,15 +250,29 @@
 	  
 	</head>
   <body>
-	    <script>
-
+	
+	<script>
     AFRAME.registerComponent('video-component', {
       schema: {
         delay: { type: "number", default: 0 }
       }
     });
 
+  const navLinkClickHandler = (link) => {
+    const currentActiveLink = document.querySelector('#nav .active');
 
+    if (currentActiveLink) {
+      currentActiveLink.classList.remove('active');
+    }
+
+    link.classList.add('active');
+  };
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('#nav a').forEach((link) => {
+      link.addEventListener('click', () => { navLinkClickHandler(link) });
+    });
+  });
   </script>
 	  
 	<div class="section" id="000">
@@ -359,62 +377,62 @@
     <a-plane geometry="primitive: circle; radius: 3.725; segments: 60;" position="0 0 0" rotation="-90 15 0" color="#000"></a-plane>
 	
 	<a-plane video-component="delay:001000"
-			 sound="src:url(audio/SSRI.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/SSRI.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="0 1.5 -3.725" rotation="0 0 0"
 			 src="#SSRI"></a-plane>
 
 	<a-plane video-component="delay:030000"
-			 sound="src:url(audio/Suicide_and_Me_short.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/Suicide_and_Me_short.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="3.225 1.5 -1.8625" rotation="0 -60 0"
 			 src="#Samaritans"></a-plane>
 			
 	<a-plane video-component="delay:060000"
-			 sound="src:url(audio/This is Mind.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/This is Mind.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="3.225 1.5 1.8625" rotation="0 -120 0"
 			 src="#Mind"></a-plane>
 			
 	<a-plane video-component="delay:090000"
-			 sound="src:url(audio/CALM - Leading a movement against suicide.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/CALM - Leading a movement against suicide.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="0 1.5 3.725" rotation="0 -180 0"
 			 src="#CALM"></a-plane>
 
 	<a-plane video-component="delay:120000"
-			 sound="src:url(audio/Unipolar depression Health Questionnaire (PHQ-9).mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/Unipolar depression Health Questionnaire (PHQ-9).mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="-3.225 1.5 1.8625" rotation="0 -240 0"
 			 src="#PHQ9"></a-plane>
 			
 	<a-plane video-component="delay:150000"
-			 sound="src:url(audio/Assessing for Depression in a Virtual Primary Care Appointment with a Young Person.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/Assessing for Depression in a Virtual Primary Care Appointment with a Young Person.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="-3.225 1.5 -1.8625" rotation="0 -300 0"
 			 src="#Assessment"></a-plane>
 			
 	<a-plane video-component="delay:180000"
-			 sound="src:url(audio/Talk Liverpool Cognitive Behavioural Therapy CBT.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/Talk Liverpool Cognitive Behavioural Therapy CBT.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="-1.8625 1.5 -3.225" rotation="0 30 0"
 			 src="#CBT"></a-plane>
 
 	<a-plane video-component="delay:210000"
-			 sound="src:url(audio/TLP.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/TLP.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="1.8625 1.5 -3.225" rotation="0 -30 0"
 			 src="#TLP"></a-plane>
 			
 	<a-plane video-component="delay:240000"
-			 sound="src:url(audio/CP.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/CP.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="3.725 1.5 0" rotation="0 -90 0"
 			 src="#CP"></a-plane>
 			
 	<a-plane video-component="delay:270000"
-			 sound="src:url(audio/sertraline.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/sertraline.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="1.8625 1.5 3.225" rotation="0 -150 0"
 			 src="#Sertraline"></a-plane>
 
 	<a-plane video-component="delay:300000"
-			 sound="src:url(audio/Grounding_Tricks for Anxiety.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/Grounding_Tricks for Anxiety.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="-1.8625 1.5 3.225" rotation="0 -210 0"
 			 src="#Grounding"></a-plane>
 			
 	<a-plane video-component="delay:330000"
-			 sound="src:url(audio/Point of View Perspective of a Trauma Patient.mp3); loop: true; rolloffFactor: 2.5;"
+			 sound="src:url(audio/Point of View Perspective of a Trauma Patient.mp3); loop: true; rolloffFactor: 1.5;"
 			 width="2" height="1.125" position="-3.725 1.5 0" rotation="0 -270 0"
 			 src="#Ambulance"></a-plane>
 
