@@ -67,7 +67,7 @@
 					text-transform: uppercase;
 					} 
 		
-		hr{			border: 0.05vw solid #fff;
+		hr{			border-top: 0.1vw solid #fff;
 					}
 		
 		#title{		display: inline-block;
@@ -108,6 +108,11 @@
 					background: #000;
 					z-index: 1;
 					}
+		
+		#nav a.active {
+    				font-family: 'Frutiger Roman', sans-serif;
+					border-top: 0.25vw solid #fff;
+  					}
 		
 		.section{	position: relative;
 					height: 90vh;
@@ -246,15 +251,29 @@
 	  
 	</head>
   <body>
-	    <script>
-
+	
+	<script>
     AFRAME.registerComponent('video-component', {
       schema: {
         delay: { type: "number", default: 0 }
       }
     });
 
+  const navLinkClickHandler = (link) => {
+    const currentActiveLink = document.querySelector('#nav .active');
 
+    if (currentActiveLink) {
+      currentActiveLink.classList.remove('active');
+    }
+
+    link.classList.add('active');
+  };
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('#nav a').forEach((link) => {
+      link.addEventListener('click', () => { navLinkClickHandler(link) });
+    });
+  });
   </script>
 	  
 	<div class="section" id="000">
