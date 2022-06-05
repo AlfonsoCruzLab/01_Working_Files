@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-T5Y4R5D7T0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
+      gtag("config", "G-T5Y4R5D7T0");
+    </script>
+
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
   </head>
   <body>
-      
         <script>
           AFRAME.registerComponent("video-component", {
             schema: {
@@ -225,5 +238,32 @@
 
           <a-sky color="#000"></a-sky>
         </a-scene>
+<script>
+
+    const scene = document.getElementById("scene");
+    scene.onmousedown = () => {
+
+      let videoComponents = scene.querySelectorAll('[video-component]');
+
+      Array.from(videoComponents).forEach(video => {
+
+        const thisVideo = video;
+        const id = video.getAttribute('src');
+
+        setTimeout(function () {
+          document.getElementById(id.split('#')[1]).play();
+          thisVideo.components.sound.playSound();
+        }, video.components['video-component'].data.delay);
+
+        console.log(video.components['video-component'].data.delay);
+
+
+      });
+
+      scene.onmousedown = undefined;
+
+    }
+
+  </script>
   </body>
 </html>
