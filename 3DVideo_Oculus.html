@@ -29,12 +29,8 @@
 
         <a-scene id="scene">
 			
-<!-- Match Oculus Go controller if present, regardless of hand. -->
-<a-entity oculus-go-controls></a-entity>
-
-<!-- Match Oculus Go controller if present and for specified hand. -->
-<a-entity oculus-go-controls="hand: left"></a-entity>
-<a-entity oculus-go-controls="hand: right"></a-entity>
+<a-entity oculus-touch-controls="hand: left"></a-entity>
+<a-entity oculus-touch-controls="hand: right"></a-entity>
 			
           <a-assets>
             <video
