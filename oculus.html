@@ -18,7 +18,7 @@
 
       AFRAME.registerComponent("vr-oculus-controls", {
         init: function () {
-          this.el.addEventListener("abuttondown", VR.togglePlay);
+          this.el.addEventListener("triggerdown", VR.togglePlay);
           this.el.addEventListener("bbuttondown", VR.reset);
         },
       });
