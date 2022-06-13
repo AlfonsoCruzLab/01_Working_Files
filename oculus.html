@@ -5,6 +5,7 @@
   </head>
 
   <body>
+	  
     <div class="svg-diagram" style="display: inline-block">
       <img src="vectors/wasd_icon.svg" alt="Diagram" />
     </div>
@@ -99,7 +100,13 @@
         light="type: directional; color: #fff; intensity: 2"
         position="0 4 0"
       ></a-entity>
-
+		
+	  <a-entity position="0 0.5 -3.724"
+        text="anchor: center; width: 2; color: #bbb;
+			  value: Press trigger to Play/Stop
+Press B to restart">
+      </a-entity>
+		
       <a-plane
         geometry="primitive: circle; radius: 3.725; segments: 60;"
         position="0 0 0"
