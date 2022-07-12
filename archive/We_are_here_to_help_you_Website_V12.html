@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @font-face {
+        font-family: 'Frutiger Light';
+        src: url('fonts/FrutigerLTStd-Light.otf');
+      }
+
+      @font-face {
+        font-family: 'Frutiger Roman';
+        src: url('fonts/FrutigerLTStd-Roman.otf');
+      }
+
+      @font-face {
+        font-family: 'Frutiger Black';
+        src: url('fonts/FrutigerLTStd-BlackItalic.otf');
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media screen and (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Frutiger Light', sans-serif;
+        font-size: 1.2vw;
+        word-spacing: 0.2vw;
+        letter-spacing: 0.1vw;
+		line-height: 1.4;
+        font-kerning: normal;
+        overflow-y: hidden;
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 15px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #fff;
+        border: 5px solid #000;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      mark {
+        background-color: #005eb8;
+        color: #fff;
+        display: inline-block;
+        height: 4.5vw;
+        padding: 0 0.5vw;
+        line-height: 1.1;
+      }
+
+      #mini_mark {
+        font-family: 'Frutiger Black';
+        text-transform: uppercase;
+      }
+
+      #title {
+        display: inline-block;
+        float: left;
+        font-family: 'Frutiger Black', sans-serif;
+        text-transform: uppercase;
+        font-size: 5vw;
+        word-spacing: 0vw;
+        letter-spacing: 0vw;
+        width: 33%;
+        line-height: 1;
+      }
+
+      #intro {
+        display: inline-block;
+        float: left;
+        font-family: 'Frutiger Roman', sans-serif;
+        width: 67%;
+        font-size: 2.25vw;
+        word-spacing: 0.25vw;
+        line-height: 1.25;
+      }
+
+      #nav {
+        position: fixed;
+        bottom: 0px;
+        left: 2.25vw;
+        right: 2.25vw;
+        padding: 0;
+		height: 5vh;
+        -webkit-column-count: 8;
+        -moz-column-count: 8;
+        column-count: 8;
+        -webkit-column-gap: 0;
+        -moz-column-gap: 0;
+        column-gap: 0;
+        font-size: 1vw;
+        letter-spacing: 0.125vw;
+        background: #000;
+        z-index: 1;
+      }
+		
+	  #nav a {
+        border-top: 0.05vw solid #fff;
+		display: inline-block;
+		box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+		width: 100%;
+		padding-top: 0.75vw;
+		cursor: zoom-in;
+      }
+	
+	  #nav a:hover {
+        font-family: 'Frutiger Roman', sans-serif;
+      }
+
+      #nav a.active {
+		border-top: 0.35vw solid #fff;
+		padding-top: 0.45vw;
+      }
+	
+	  #Alfonso {
+		font-family: 'Frutiger Roman', sans-serif;
+		text-align: right;
+		letter-spacing: 0.05vw;
+      }
+		
+	  #Alfonso:hover {
+        font-family: 'Frutiger Roman', sans-serif;
+		cursor: help;
+      }
+
+      .section {
+        position: relative;
+        height: 90vh;
+        padding: 2vw;
+        margin-bottom: 8vw;
+        overflow: hidden;
+      }
+
+      .body_copy {
+		display: inline-block;
+        float: left;
+		border-top: 0.05vw solid #fff;
+		box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+		padding: 1vw 0 0 0;
+		width: 33%;
+		margin-right: 2%;
+      }
+
+      .project {
+		display: inline-block;
+        float: left;
+        border: 0.05vw solid #fff;
+		box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        overflow: auto;
+        width: 65%;
+		height: 100%;
+      }
+
+      .image {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+
+      .carousel {
+        border: 0.1vw solid #fff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        display: inline;
+        float: left;
+        height: 100%;
+        width: auto;
+        margin-left: 5vh;
+      }
+
+      .carousel_cover {
+        border: 0.1vw solid #fff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        display: inline;
+        float: left;
+        height: 100%;
+        width: 93.5vw;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .phq9-test {
+        border: 0.1vw solid #fff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        display: inline;
+        float: left;
+        height: 100%;
+        width: 90vw;
+        margin-left: 5vh;
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #000;
+        background-attachment: fixed;
+        border: none;
+        margin: 0px;
+      }
+
+      .flex-300 {
+        display: flex;
+        height: 100%;
+      }
+
+      .flex-300 > * {
+        flex-shrink: 0;
+      }
+
+      #footer {
+        position: relative;
+        padding: 2vw;
+        margin-bottom: 10vh;
+      }
+
+      @media (orientation: portrait) {
+        body {
+          font-size: 3vw;
+          word-spacing: 0.25vw;
+		  overflow-y: scroll;
+        }
+
+        #title {
+          display: none;
+        }
+
+        #mini_mark {
+          font-size: 16vw;
+          line-height: 1.4;
+          background-color: #005eb8;
+          margin-right: 7.5vw;
+		  padding: 3vw 0 0 0;
+        }
+
+        #intro {
+          font-size: 4vw;
+          word-spacing: 0.5vw;
+          width: 100%;
+        }
+
+        .section {
+          height: auto;
+          margin-bottom: 10vh;
+        }
+
+        .body_copy {
+          width: 100%;
+          padding-bottom: 5vw;
+        }
+
+        .project {
+          height: 80vh;
+          width: 100%;
+        }
+
+        #nav {
+          left: 3.5vw;
+          right: 3.5vw;
+		  height: 3vh;
+          font-size: 3vw;
+          letter-spacing: 0.5vw;
+		  -webkit-column-count: 7;
+          -moz-column-count: 7;
+          column-count: 7;
+        }
+	
+		#nav a {
+		  padding-top: 1vw;
+      }
+		  
+		#nav a.active {
+		  border-top: 0.75vw solid #fff;
+		  padding-top: 0.45vw;
+      }
+	
+		#Alfonso {
+		  display: none;
+      }
+		  
+		  
+		.phq9-test {
+          background-position: center center;
+      }
+      }
+    </style>
+
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js"></script>
+  </head>
+  <body>
+    <div id="nav">
+      <a href="#000">000%</a>
+      <br />
+      <a href="#100">100%</a>
+      <br />
+      <a href="#200">200%</a>
+      <br />
+      <a href="#300">300%</a>
+      <br />
+      <a href="#400">400%</a>
+      <br />
+      <a href="#500">500%</a>
+      <br />
+      <a href="#600">600%</a>
+	  <br />
+	  <a href="mailto:info@alfonsocruz.es" id="Alfonso">Alfonso Cruz 2022</a>
+    </div>
+
+    <div class="section" id="000">
+      <div id="title">
+        <mark>We are</mark><br /><mark>here to</mark><br /><mark>help you</mark>
+      </div>
+      <div id="intro">
+        Mental health awareness is currently at its highest, marked by days, weeks and months on the calendar. This is the achievement of the many campaigns led by public and private institutions, and the hundreds of charities built around these issues. The shared goal is to erase the stigma around mental health disorders and encourage people to seek help. But what happens when support is sought? What resources are available, and how do we access them?<br /><br />
+        <span id="mini_mark">We are here to help you</span> is a series of projects in which I revisit my personal experience applying for mental health aid from public services in the UK. Each is presented through different methods of graphic analysis, starting by mapping out the whole journey and then zooming deeper into details.
+      </div>
+    </div>
+
+    <div class="section" id="100">
+      <div class="body_copy">
+        The foundation of the research is a flowchart that tracks the route I followed to access treatment. It includes the organisations, people and procedures I encountered across the application process, providing a bird's-eye view of the journey and its ramifications.
+      </div>
+      <div class="project svg-diagram">
+        <img class="image" src="vectors/Diagram.svg" alt="Diagram" />
+      </div>
+    </div>
+
+    <div class="section" id="200">
+      <div class="body_copy">
+        Looking closer at the process, it comes across as scripted - where each organisation plays a different role depending on the services they provide. The following text contrasts how the institutions present themselves through their marketing material against my experience as a patient.
+      </div>
+      <div class="project">
+        <img class="image" src="vectors/Text_Map.svg" alt="Text Map" />
+      </div>
+    </div>
+
+    <div class="section" id="300">
+      <div class="body_copy">
+        Most of the application is through paperwork. I compiled the documents I was supplied with into a printed archive. It's printed on continuous paper to embody the length of this procedure - 80m in total, taller than a 20-storey building.
+      </div>
+      <div class="project" style="border: none">
+        <div class="flex-300">
+          <!-- <img
+            class="carousel_cover"
+            style="background-image: url('images/Archive_01.jpg')"
+            alt=""
+          /> -->
+          <img class="carousel" style="margin-left: 0px" src="images/Archive_01.jpg" alt="Archive" />
+          <img class="carousel" src="images/Archive_02.jpg" alt="Archive" />
+          <img class="carousel" src="images/Archive_03.jpg" alt="Archive" />
+          <img class="carousel" src="images/Archive_04.jpg" alt="Archive" />
+          <div class="carousel" style="width: 50vw; overflow: auto">
+            <img
+              style="width: 100%"
+              src="images/Archive_05.jpg"
+              alt="Archive"
+            />
+          </div>
+          <img class="carousel" src="images/Archive_06.jpg" alt="Archive" />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/pydU8NFU5B8"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="400">
+      <div class="body_copy">
+        The paperwork that I had to do more often was the questionnaires to monitor my mental health. Over time, I found them challenging to complete, possibly because one of the symptoms of depression is trouble concentrating. When we can't focus, we tend to skim-read, searching for specific information or the general idea of the content. I distilled one of the tests through a system that emulates how the test could be read if scanned for core messages.
+      </div>
+      <div class="project">
+        <div style="height: 100%; width: 1980vw">
+          <img
+            class="phq9-test"
+            style="background-image: url('images/001.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/002.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/003.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/004.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/005.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/006.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/007.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/008.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/009.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/010.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/011.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/012.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/013.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/014.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/015.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/016.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/017.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/018.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/019.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/020.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/021.gif')"
+            alt=""
+          />
+          <img
+            class="phq9-test"
+            style="background-image: url('images/022.gif')"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="500">
+      <div class="body_copy">
+        I did find a vast amount of people out there to help me, but for some reason, meeting more carers seemed to harm me. The following experiment is a first-person simulation which recreates a selection of moments I experienced.
+      </div>
+      <div class="project">
+		 <img src="vectors/wasd_icon.svg" style="position: absolute; bottom: 3.75vh; left: 0, width: auto; height: 8vh; z-index: 2;" alt="WASD">
+        <a-scene embedded style="width; 100$; height:100%;" id="scene">
+          <a-assets>
+            <video
+              id="SSRI"
+              src="videos/SSRI.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="Samaritans"
+              src="videos/Suicide_and_Me_short.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="PHQ9"
+              src="videos/Unipolar depression Health Questionnaire (PHQ-9).mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="Sertraline"
+              src="videos/sertraline.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="Assessment"
+              src="videos/Assessing for Depression in a Virtual Primary Care Appointment with a Young Person.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="CBT"
+              src="videos/Talk Liverpool Cognitive Behavioural Therapy CBT.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="TLP"
+              src="videos/TLP.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="Mind"
+              src="videos/This is Mind.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="CALM"
+              src="videos/CALM - Leading a movement against suicide.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="CP"
+              src="videos/CP.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="Grounding"
+              src="videos/Grounding_Tricks for Anxiety.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+            <video
+              id="Ambulance"
+              src="videos/Point of View Perspective of a Trauma Patient.mp4"
+              loop="true"
+              preload="auto"
+            ></video>
+          </a-assets>
+
+          <a-entity light="type: ambient; color: #fff"></a-entity>
+          <a-entity
+            light="type: directional; color: #fff; intensity: 2"
+            position="0 4 0"
+          ></a-entity>
+
+          <a-plane
+            geometry="primitive: circle; radius: 3.725; segments: 60;"
+            position="0 0 0"
+            rotation="-90 15 0"
+            color="#000"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:001000"
+            sound="src:url(audio/SSRI.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="0 1.5 -3.725"
+            rotation="0 0 0"
+            src="#SSRI"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:030000"
+            sound="src:url(audio/Suicide_and_Me_short.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="3.225 1.5 -1.8625"
+            rotation="0 -60 0"
+            src="#Samaritans"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:060000"
+            sound="src:url(audio/This is Mind.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="3.225 1.5 1.8625"
+            rotation="0 -120 0"
+            src="#Mind"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:085000"
+            sound="src:url(audio/CALM - Leading a movement against suicide.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="0 1.5 3.725"
+            rotation="0 -180 0"
+            src="#CALM"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:120000"
+            sound="src:url(audio/Unipolar depression Health Questionnaire (PHQ-9).mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="-3.225 1.5 1.8625"
+            rotation="0 -240 0"
+            src="#PHQ9"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:150000"
+            sound="src:url(audio/Assessing for Depression in a Virtual Primary Care Appointment with a Young Person.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="-3.225 1.5 -1.8625"
+            rotation="0 -300 0"
+            src="#Assessment"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:180000"
+            sound="src:url(audio/Talk Liverpool Cognitive Behavioural Therapy CBT.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="-1.8625 1.5 -3.225"
+            rotation="0 30 0"
+            src="#CBT"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:210000"
+            sound="src:url(audio/TLP.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="1.8625 1.5 -3.225"
+            rotation="0 -30 0"
+            src="#TLP"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:240000"
+            sound="src:url(audio/CP.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="3.725 1.5 0"
+            rotation="0 -90 0"
+            src="#CP"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:270000"
+            sound="src:url(audio/sertraline.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="1.8625 1.5 3.225"
+            rotation="0 -150 0"
+            src="#Sertraline"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:300000"
+            sound="src:url(audio/Grounding_Tricks for Anxiety.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="-1.8625 1.5 3.225"
+            rotation="0 -210 0"
+            src="#Grounding"
+          ></a-plane>
+
+          <a-plane
+            video-component="delay:330000"
+            sound="src:url(audio/Point of View Perspective of a Trauma Patient.mp3); loop: true; rolloffFactor: 1.5;"
+            width="2"
+            height="1.125"
+            position="-3.725 1.5 0"
+            rotation="0 -270 0"
+            src="#Ambulance"
+          ></a-plane>
+
+          <a-sky color="#000"></a-sky>
+        </a-scene>
+      </div>
+    </div>
+
+    <div class="section" id="600">
+      <div class="body_copy">
+        We've attained plenty of mental health awareness, but the services available are still behind. This project aims to provide an insight into what happens after reaching out for help. I've used my experience as the focal point of this research, but further discussion is needed. If you have ever required mental health assistance or are a mental health professional, please share your experiences in the following form. There's a conversation to have that can save lives.
+      </div>
+
+      <div class="project" style="padding: 2vw;">
+        <div id="disqus_thread" style="width: 100%"></div>
+        <script></script>
+        <noscript
+          >Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript"
+            >comments powered by Disqus.</a
+          ></noscript
+        >
+      </div>
+    </div>
+
+    <div id="footer">
+      <hr />
+      <div style="width: 50%; display: inline-block; float: left">
+        <a href="mailto: info@alfonsocruz.es;" style="cursor: help"
+          >Alfonso Cruz Castillo</a
+        >
+      </div>
+      <div
+        style="
+          text-align: right;
+          width: 50%;
+          display: inline-block;
+          float: left;
+        "
+      >
+        MA-GCM CSM/UAL 2022
+      </div>
+    </div>
+
+    <script>
+      const navLinkClickHandler = (link) => {
+        const currentActiveLink = document.querySelector('#nav .active');
+
+        if (currentActiveLink) {
+          currentActiveLink.classList.remove('active');
+        }
+
+        link.classList.add('active');
+      };
+
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('#nav a').forEach((link) => {
+          link.addEventListener('click', () => {
+            navLinkClickHandler(link);
+          });
+        });
+
+        const svgDiagram = document.querySelector('.svg-diagram img');
+
+        panzoom(svgDiagram);
+      });
+
+      AFRAME.registerComponent('video-component', {
+        schema: {
+          delay: { type: 'number', default: 0 },
+        },
+      });
+
+      const scene = document.getElementById('scene');
+      const audioEls = scene.querySelectorAll('a-plane');
+      const videoComponents = scene.querySelectorAll('[video-component]');
+
+      let isMuted = false;
+
+      const toggleMute = () => {
+        audioEls.forEach((audio) => {
+          audio.setAttribute('sound', 'volume', isMuted ? 1 : 0 );
+        });
+
+        isMuted = !isMuted;
+      };
+
+      const startAFrame = () => {
+        Array.from(videoComponents).forEach((video) => {
+          const thisVideo = video;
+          const id = video.getAttribute('src');
+
+          setTimeout(function () {
+            document.getElementById(id.split('#')[1]).play();
+            thisVideo.components.sound.playSound();
+          }, video.components['video-component'].data.delay);
+
+          console.log(video.components['video-component'].data.delay);
+        });
+
+        document.body.onkeyup = function(e) {
+          if (e.code == "Space" || e.code == "Escape") {
+            toggleMute();
+          }
+        }
+      };
+
+      scene.onmousedown = () => {
+        startAFrame();
+
+        scene.onmousedown = undefined;
+      };
+
+
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+      var disqus_config = function () {
+        this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+
+      (function () {
+        // DON'T EDIT BELOW THIS LINE
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://we-are-here-to-help-you.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  </body>
+</html>
