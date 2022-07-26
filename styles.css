@@ -28,6 +28,16 @@
 
 #nav {
 	display: flex;
+	left: calc(2.25vw + 5px);
+	right: calc(2.25vw + 5px);
+	justify-content: space-between;
+	border-top: solid 1px white;
+}
+
+#nav a {
+	position: relative;
+	top: -1px;
+	width: auto;
 }
 
 @media only screen and (max-width: 900px) {
@@ -64,8 +74,8 @@
 	#nav a {
 		display: block;
 		width: 100%;
-		font-size: 14px;
-		padding: 10px 5px;
+		font-size: 28px;
+		padding: 20px 10px;
 	}
 	
 	#nav a.active, #nav a:hover  {
@@ -80,8 +90,8 @@
 	.close {
 		display: block;
 		position: absolute;
-		top: 10px;
-		right: 15px;
+		top: 8px;
+		right: 12px;
 		width: 30px !important;
 		-webkit-appearance: none;
 		border: none;
@@ -95,11 +105,25 @@
 	
 	#menu {
 		position: fixed;
-		top: 8px; right: 8px;
+		top: calc(2vw - 1px); 
+		right: calc(2vw - 1px);
 		-webkit-appearance: none;
 		background: none;
 		border: none;
 		display: block;
 		z-index: 8000;
 	}
+}
+
+.carousel-wrapper .flickity-prev-next-button {
+	width: 30px;
+	height: 30px;
+}
+
+.ios-message {
+	display: none;
+}
+
+body.iphone .ios-message, body.ipad .ios-message {
+	display: block;
 }
