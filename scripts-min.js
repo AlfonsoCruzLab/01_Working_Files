@@ -28,3 +28,26 @@ if ($(window).width() < 900) {
    });
    
 }
+
+// Add some classes to body for CSS hooks
+
+// Get browser
+$.each($.browser, function(i) {
+    $('body').addClass(i);
+    return false;  
+});
+
+
+// Get OS
+var os = [
+    'iphone',
+    'ipad',
+    'windows',
+    'mac',
+    'linux'
+];
+
+var match = navigator.appVersion.toLowerCase().match(new RegExp(os.join('|')));
+if (match) {
+    $('body').addClass(match[0]);
+};
