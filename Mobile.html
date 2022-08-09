@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-T5Y4R5D7T0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-T5Y4R5D7T0");
+    </script>
+
+	  <script type="text/javascript">
+alert("TRIGGER WARNING: Note that this site includes references to suicide that some may find distressing.");
+</script>
+	  
+    <style>
+      @font-face {
+        font-family: "Frutiger Light";
+        src: url("fonts/FrutigerLTStd-Light.otf");
+      }
+
+      @font-face {
+        font-family: "Frutiger Roman";
+        src: url("fonts/FrutigerLTStd-Roman.otf");
+      }
+
+      @font-face {
+        font-family: "Frutiger Black";
+        src: url("fonts/FrutigerLTStd-BlackItalic.otf");
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media screen and (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: "Frutiger Light", sans-serif;
+        font-size: 1.2vw;
+        line-height: 1.4;
+		letter-spacing: 0.05vw;
+		word-spacing: 0.1vw;
+        font-kerning: normal;
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 15px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #fff;
+        border: 5px solid #000;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      mark {
+        background-color: #005eb8;
+        color: #fff;
+        display: inline-block;
+        height: 4.5vw;
+        padding: 0 0.5vw;
+        line-height: 1.1;
+      }
+
+      #mini_mark {
+        font-family: "Frutiger Black";
+        text-transform: uppercase;
+      }
+
+	  b {
+		font-family: "Frutiger Roman", sans-serif;
+	  }
+		
+      #title {
+        display: inline-block;
+        float: left;
+        width: 33%;
+        margin-right: 2%;
+      }
+
+      #intro {
+        display: inline-block;
+        float: left;
+        font-family: "Frutiger Roman", sans-serif;
+        width: 65%;
+        font-size: 2.25vw;
+        word-spacing: 0.25vw;
+        line-height: 1.25;
+      }
+
+      #nav {
+        position: fixed;
+        bottom: 0px;
+        left: 2.25vw;
+        right: 2.25vw;
+        padding: 0;
+        height: 5vh;
+        -webkit-column-count: 8;
+        -moz-column-count: 8;
+        column-count: 8;
+        -webkit-column-gap: 0;
+        -moz-column-gap: 0;
+        column-gap: 0;
+        font-size: 0.9vw;
+        background: #000;
+        z-index: 1;
+      }
+
+      #nav a {
+        border-top: 0.05vw solid #fff;
+        display: inline-block;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        width: 100%;
+        padding-top: 0.75vw;
+		transition: 0.33s linear;
+      }
+
+      #nav a:hover {
+        border-top: 0.2vw solid #fff;
+        padding-top: 0.6vw;
+      }
+
+      #nav a.active {
+         border-top: 0.2vw solid #fff;
+         padding-top: 0.6vw;
+      }
+
+      #Alfonso {
+        text-align: right;
+      }
+
+      #Alfonso:hover {
+      }
+
+      .section {
+        position: relative;
+        height: 90vh;
+        padding: 2vw;
+        margin-bottom: 8vw;
+        overflow: hidden;
+		scroll-snap-type: y mandatory;
+      }
+
+      .body_copy {
+        display: inline-block;
+        float: left;
+        border-top: 0.05vw solid #fff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        padding: 1vw 0 0 0;
+        width: 33%;
+        margin-right: 2%;
+      }
+
+      .project {
+        display: inline-block;
+        float: left;
+        border: 0.05vw solid #fff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        overflow: auto;
+        width: 65%;
+        height: 100%;
+		scroll-snap-align: start;
+      }
+
+      .image {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+
+      .carousel {
+        border: 0.1vw solid #fff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        display: inline;
+        float: left;
+        height: 100%;
+        width: auto;
+        margin-left: 5vh;
+      }
+
+      .carousel_cover {
+        border: 0.1vw solid #fff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        display: inline;
+        float: left;
+        height: 100%;
+        width: 93.5vw;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .phq9-test {
+        border: 0.1vw solid #fff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        display: inline;
+        float: left;
+        height: 100%;
+        width: 90vw;
+        margin-left: 5vh;
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #000;
+        background-attachment: fixed;
+        border: none;
+        margin: 0px;
+      }
+
+      .flex-300 {
+        display: flex;
+        height: 100%;
+      }
+
+      .flex-300 > * {
+        flex-shrink: 0;
+      }
+
+      #footer {
+        position: relative;
+        padding: 2vw;
+        margin-bottom: 7.5vh;
+      }
+
+      @media (orientation: portrait) {
+        body {
+          font-size: 3.6vw;
+		  letter-spacing: 0.15vw;
+		  word-spacing: 0.3vw;
+        }
+
+        
+		#title {
+          width: 100%;
+		  margin-bottom: 7.5vw;
+        }
+
+        #intro {
+        width: 100%;
+        font-size: 4.5vw;
+        word-spacing: 0.5vw;
+        }
+
+        .section {
+          height: auto;
+          margin-bottom: 10vh;
+        }
+
+        .body_copy {
+          width: 100%;
+          padding-bottom: 5vw;
+        }
+
+        .project {
+          height: 80vh;
+          width: 100%;
+        }
+
+        #nav {
+          left: 3.5vw;
+          right: 3.5vw;
+          height: 3vh;
+          font-size: 3vw;
+          -webkit-column-count: 7;
+          -moz-column-count: 7;
+          column-count: 7;
+        }
+
+        #nav a {
+          padding-top: 1vw;
+        }
+
+        #nav a.active {
+          border-top: 0.75vw solid #fff;
+          padding-top: 0.45vw;
+        }
+
+        #Alfonso {
+          opacity: 0;
+        }
+
+        .phq9-test {
+          background-position: center center;
+        }
+      }
+      
+      @media only screen and (max-width: 600px) {
+       .project.aframe {
+         display: none;
+       }
+       
+       .ios-message {
+         display: block !important;
+       }
+      }
+    </style>
+    
+    <!-- markup by saul -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!-- end markup by saul -->
+    
+    <meta property="og:title" content="WE ARE HERE TO HELP YOU">
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://weareheretohelpyou.uk/og.jpg">
+    <meta property="og:url" content="https://weareheretohelpyou.uk/">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:description" content="A series of projects looking at a personal experience applying for mental health aid from public services in the UK.">
+    <meta property="og:site_name" content="WE ARE HERE TO HELP YOU">
+    <meta name="twitter:image:alt" content="WE ARE HERE TO HELP YOU">
+
+    <script src="https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js"></script>
+  </head>
+  <body>
+    <button id="menu"><img src="/vectors/menu.svg" alt="menu" /></button>
+    <div id="nav">
+      <button id="close" class="close">X</button>
+      <a href="#000">Introduction</a>
+      <a href="#100">100%: Diagramming</a>
+      <a href="#200">200%: Mapping</a>
+      <a href="#300">300%: Gleaning</a>
+      <a href="#400">400%: Distilling</a>
+      <a href="#500">500%: Simulating</a>
+      <a href="#600">600%: Discussing</a>
+      <a href="mailto:info@alfonsocruz.es" id="Alfonso">Alfonso Cruz 2022</a>
+    </div>
+
+    <div class="section" id="000">
+      <div id="title">
+        <img
+          src="vectors/Title.svg"
+          style="
+            object-fit: contain;
+            width: 90%;
+            height: 100%;
+            text-align: left;
+            display: block;
+            float: left;
+          "
+          alt="WE ARE HERE TO HELP YOU"
+        />
+      </div>
+      <div id="intro">
+        Mental health awareness is currently at its highest, marked by days,
+        weeks and months on the calendar. This is the achievement of the many
+        campaigns led by public and private institutions, and the hundreds of
+        charities built around these issues. The shared goal is to erase the
+        stigma around mental health disorders and encourage people to seek help.
+        But what happens when support is sought? What resources are available,
+        and how do we access them?<br /><br />
+        <span id="mini_mark">We are here to help you</span> is a series of
+        projects in which I revisit my personal experience applying for mental
+        health aid from public services in the UK. Each is presented through
+        different methods of graphic analysis, starting by mapping out the whole
+        journey and then zooming deeper into details.
+      </div>
+    </div>
+
+    <div class="section" id="100">
+      <div class="body_copy">
+        <b>Diagram</b><br /><br />
+        The foundation of the research is a flowchart that tracks the route I
+        followed to access treatment. It includes the organisations, people and
+        procedures I encountered across the application process, providing a
+        bird's-eye view of the journey and its ramifications.
+      </div>
+      <div class="project svg-diagram">
+        <img class="image" src="vectors/Diagram.svg" alt="Diagram" />
+      </div>
+    </div>
+
+    <div class="section" id="200">
+      <div class="body_copy">
+        <b>Written Map</b><br /><br />
+        Looking closer at the process, it comes across as scripted - where each
+        organisation plays a different role depending on the services they
+        provide. The following text contrasts how the institutions present
+        themselves through their marketing material with my experience as a
+        patient.
+      </div>
+      <div class="project">
+        <img class="image" src="vectors/Text_Map.svg" alt="Text Map" />
+      </div>
+    </div>
+
+    <div class="section" id="300">
+      <div class="body_copy">
+        <b>Printed Archive</b><br /><br />
+        Most of the application is made through paperwork. I compiled the
+        documents I was supplied with into a printed archive. It's printed on
+        continuous paper to embody the length of this procedure - 80m in total,
+        taller than a 20-storey building.
+      </div>
+      <div class="project" style="border: none">
+        <div class="flex-300">
+          <!-- <img
+            class="carousel_cover"
+            style="background-image: url('images/Archive_01.jpg')"
+            alt=""
+          /> -->
+          <img
+            class="carousel"
+            style="margin-left: 0px; max-width: 96vw;"
+            src="images/Archive_01.jpg"
+            alt="Archive"
+          />
+          <img class="carousel" src="images/Archive_02.jpg" alt="Archive" />
+          <img class="carousel" src="images/Archive_03.jpg" alt="Archive" />
+          <img class="carousel" src="images/Archive_04.jpg" alt="Archive" />
+          <div class="carousel" style="width: 50vw; overflow: auto">
+            <img
+              style="width: 100%"
+              src="images/Archive_05.jpg"
+              alt="Archive"
+            />
+          </div>
+          <img class="carousel" src="images/Archive_06.jpg" alt="Archive" />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/pydU8NFU5B8"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="400">
+      <div class="body_copy">
+        <b>Automated skimming</b><br /><br />
+        The paperwork that I had to do most often was the questionnaires to
+        monitor my mental health. Over time, I found them challenging to
+        complete, possibly because one of the symptoms of depression is having
+        trouble concentrating. When we can't focus, we tend to skim-read,
+        searching for specific information or the general idea of the content. I
+        distilled one of the tests through a system that removes 5 words at a
+        time, to emulate how the test could be read if scanned for core
+        messages.
+      </div>
+     <!--markup by saul -->
+     
+     <div class="project carousel-wrapper">
+       
+       <div class="main-carousel">
+         <div class="carousel-cell"><img src="/images/001.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/002.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/003.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/004.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/005.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/006.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/007.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/008.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/009.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/010.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/011.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/012.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/013.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/014.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/015.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/016.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/017.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/018.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/019.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/020.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/021.gif" alt="image" /></div>
+         <div class="carousel-cell"><img src="/images/022.gif" alt="image" /></div>
+         
+       </div>
+       
+     </div>
+     
+     <!-- end markup by saul -->
+     
+    </div>
+
+    <div class="section" id="500">
+      <div class="body_copy">
+        <b>3D Video</b><br /><br />
+        I did find a vast amount of people out there to help me, but for some
+        reason, meeting more carers seemed to harm me. The following experiment
+        is a first-person simulation which recreates a selection of moments I
+        experienced.<br><br>
+        <p class="ios-message"><a target="_blank" href="https://weareheretohelpyou.uk/3dvideo"><u>Click here to launch this experience on mobile.</u></a><br>Please note, this experience does not currently work on iOS devices.</p>
+      </div>
+    </div>
+
+    <div class="section" id="600">
+      <div class="body_copy">
+        <b>Open Discussion</b><br /><br />
+        We've attained plenty of mental health awareness, but the services
+        available are lagging behind. This project aims to provide an insight
+        into what happens after reaching out for help. I've used my experience
+        as the focal point of this research, but further discussion is needed.
+        If you have ever required mental health assistance or are a mental
+        health professional, please share your experiences in the following
+        form. There's a conversation to have that can save lives.
+      </div>
+
+      <div class="project" style="padding: 2vw">
+        <div id="disqus_thread" style="width: 100%"></div>
+        <script></script>
+        <noscript
+          >Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript"
+            >comments powered by Disqus.</a
+          ></noscript
+        >
+      </div>
+    </div>
+
+    <div id="footer">
+      <hr />
+      <div style="width: 50%; display: inline-block; float: left">
+        <a href="mailto: info@alfonsocruz.es;" style="cursor: help"
+          >Alfonso Cruz Castillo</a
+        >
+      </div>
+      <div
+        style="
+          text-align: right;
+          width: 50%;
+          display: inline-block;
+          float: left;
+        "
+      >
+        MA-GCD CSM/UAL 2022
+      </div>
+    </div>
+
+    <script>
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+      var disqus_config = function () {};
+
+      (function () {
+        // DON'T EDIT BELOW THIS LINE
+        var d = document,
+          s = d.createElement("script");
+        s.src = "https://we-are-here-to-help-you.disqus.com/embed.js";
+        s.setAttribute("data-timestamp", +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    
+    <!--markup by saul -->
+    <script src="/scripts.js"></script>
+    <!-- end markup by saul -->
+    
+  </body>
+</html>
