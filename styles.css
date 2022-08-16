@@ -225,9 +225,7 @@
       }
 
       #footer {
-        position: relative;
-        padding: 2vw;
-        margin-bottom: 7.5vh;
+		display: none;  
       }
 
       @media (orientation: portrait) {
@@ -412,6 +410,14 @@
 		z-index: 8000;
 	}
 }
+
+      #footer {
+		display: block;  
+        position: relative;
+        padding: 2vw;
+        margin-bottom: 7.5vh;
+      }
+
 
 .carousel-wrapper .flickity-prev-next-button {
 	width: 30px;
