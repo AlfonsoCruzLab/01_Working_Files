@@ -342,8 +342,8 @@
 	.carousel-cell {
 	height: 80vh;	
 	}
-	.flickity-prev-next-button {
-		top: 100%;
+	.carousel-wrapper .flickity-prev-next-button {
+		top: 80%;
 	}
 	
 	#wasd {
