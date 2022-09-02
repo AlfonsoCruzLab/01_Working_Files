@@ -339,7 +339,8 @@
 }
 
 @media only screen and (max-width: 900px) {
-	.carousel-cell img {
+	.carousel-cell {
+	height: 80vh;	
 	}
 	.carousel-wrapper .flickity-prev-next-button {
 		top: 80%;
