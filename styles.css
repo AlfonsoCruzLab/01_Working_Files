@@ -301,7 +301,7 @@
 }
 
 .carousel-cell {
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 	overflow-y: hidden;
 	display: flex;
@@ -311,7 +311,7 @@
 
 .carousel-cell img {
 	width: 100%;
-	max-height: 90%;
+	max-height: 100%;
 	object-position: center center;
 	object-fit: contain;
 }
