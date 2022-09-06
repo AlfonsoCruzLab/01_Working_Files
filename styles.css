@@ -409,7 +409,7 @@
 		background: none;
 		border: none;
 		display: block;
-		z-index: 8000;
+		z-index: 100;
 	}
 }
 
